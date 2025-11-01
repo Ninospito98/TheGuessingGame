@@ -1,4 +1,4 @@
-﻿namespace GuessingGame
+namespace GuessingGame
 {
     internal class Program
     {
@@ -44,14 +44,21 @@
                         }
                         guessedRight = true;
                 }
+                    else if (userNum > 50 || userNum < 1)
+                    {
+                        Console.WriteLine("Number out of range! Please guess a number between 1 - 50");
+                        tries--;
+
+                    }
                     else if (userNum > botNum)
                 {
                     Console.WriteLine("Too high try again");
                 }
+                    
                     else
-                {
-                    Console.WriteLine("\nToo low try again");
-                }
+                    {
+                        Console.WriteLine("\nToo low try again");
+                    }
 
             }
 
@@ -61,8 +68,10 @@
                     if (answer == "yes")
                 {
                     playing = true;
+                    Console.Clear();
 
                 }
+                         
                     else
                 {
                     playing = false;
